@@ -1,14 +1,18 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Ionic Blank
+      Playlists
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+  <ion-list *ngFor="let playlist of homePlaylists">
+    <ion-list-header>
+      {{playlist.playlistName}}
+    </ion-list-header>
+    <button clear ion-item *ngFor="let playlistSong of homePlaylists.songs" (click)="songClicked(playlistSong)">
+      {{playlistSong.songTitle}}
+    </button>
+  </ion-list>
 </ion-content>
