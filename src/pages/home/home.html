@@ -11,7 +11,8 @@
     <ion-list-header>
       {{playlist.playlistName}}
     </ion-list-header>
-    <button clear ion-item *ngFor="let playlistSong of homePlaylists.songs" (click)="songClicked(playlistSong)">
+    <!---->
+    <button clear ion-item *ngFor="let playlistSong of playlist.songs" (click)="songClicked(playlistSong)">
       {{playlistSong.songTitle}}
     </button>
   </ion-list>
